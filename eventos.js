@@ -6,6 +6,21 @@ var teclas = {
 };
 
 document.addEventListener("keyup", dibujarTeclado);
+var cuadrito = document.getElementById("espacio");
+var papel = cuadrito.getContext("2d");
+
+dibujarLinea("red", 100, 100, 300, 300, papel);
+
+function dibujarLinea(color, xinicial, yinicial, xfinal, yfinal, lienzo){
+    lienzo.beginPath();
+    lienzo.strokeStyle = color;
+    lienzo.lineWidth = 2;
+    lienzo.moveTo(xinicial, yinicial);
+    lienzo.lineTo(xfinal, yfinal);
+    lienzo.stroke();
+    lienzo.closePath();
+}
+
 
 function dibujarTeclado(evento){
     switch(evento.keyCode){
