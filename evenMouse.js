@@ -20,7 +20,7 @@ function dibujar(xinicial, yinicial, lienzo){
 //Empieza a dibujar al dar click izquierdo
 function empezarADibujar(eje){
     dibujar(eje.x - xMargen, eje.y - yMargen, cuadradito);//Al hacer click dibuja un punto
-    document.addEventListener("mousemove", dibujarAlMover);//Ejecuta el evento mover y la funcion 
+    document.addEventListener("mousemove", dibujarAlMover);//Ejecuta el evento mover y la funcion
 }
 //Dibuja al tener click sostenido y mover el cursor
 function dibujarAlMover(mover){
