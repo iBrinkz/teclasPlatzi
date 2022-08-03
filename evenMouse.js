@@ -1,8 +1,6 @@
 var c = document.getElementById("espacio");
 var cuadradito = c.getContext("2d");
 var color = "red";
-var xMargen = 8;//margen en x del DOM
-var yMargen = 8;//margen en y del DOM
 var desplazamiento = 2;//Para que simule un punto
 //eventos 
 document.addEventListener("mousedown", empezarADibujar);
@@ -19,15 +17,15 @@ function dibujar(xinicial, yinicial, lienzo){
 }
 //Empieza a dibujar al dar click izquierdo
 function empezarADibujar(eje){
-    dibujar(eje.x - xMargen, eje.y - yMargen, cuadradito);//Al hacer click dibuja un punto
+    dibujar(eje.x - c.offsetLeft, eje.y - c.offsetTop, cuadradito);//Al hacer click dibuja un punto
     document.addEventListener("mousemove", dibujarAlMover);//Ejecuta el evento mover y la funcion
 }
 //Dibuja al tener click sostenido y mover el cursor
 function dibujarAlMover(mover){
-    dibujar(mover.x - xMargen, mover.y - yMargen, cuadradito);
+    dibujar(mover.x - c.offsetLeft, mover.y - c.offsetTop, cuadradito);
 }
 //Dejar de dibujar al soltar click
 function noDibujar(ejes){
-    dibujar(ejes.x - xMargen, ejes.y - yMargen, cuadradito);//Al soltar click agrega un punto
+    dibujar(ejes.x - c.offsetLeft, ejes.y - c.offsetTop, cuadradito);//Al soltar click agrega un punto
     document.removeEventListener("mousemove", dibujarAlMover);//finaliza el evento mover mouse
 }
